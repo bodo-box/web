@@ -1,0 +1,1241 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <!-- FAVICON BUAT CHROME -->
+<link rel="icon" type="image/png" href="logo-bodo.png">
+<link rel="apple-touch-icon" href="logo-bodo.png">
+<link rel="shortcut icon" type="image/png" href="logo-bodo.png">
+<meta name="theme-color" content="#FDF8EE">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>bodo-box.com</title>
+  <link rel="icon" type="image/png" href="/favicon-32.png">
+  <meta property="og:image" content="https://bodo-box.com/og-bodo-box.png" />
+  <meta property="og:title" content="Bodo Box.com | Honesty Transparency Integrity" />
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #FDF8EE;
+      color: #2B2117;
+      margin: 0
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      background: #FDF8EE;
+      border-bottom: 1px solid #EADFCB;
+      padding: 10px;
+      z-index: 10
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .logo {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: .15em
+    }
+
+    .tag {
+      font-size: 7px;
+      letter-spacing: .2em;
+      opacity: .6
+    }
+
+    .mbtn {
+      font-size: 10px;
+      padding: 6px 10px;
+      border-radius: 16px;
+      background: #EADFCB;
+      border: 1px solid #D9C5A5;
+      cursor: pointer
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      border: 1px solid #F0E6D3;
+      margin-bottom: 10px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px
+    }
+
+    .input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #D9C5A5;
+      margin-bottom: 6px;
+      font-size: 11px;
+      box-sizing: border-box
+    }
+
+    .btnp {
+      width: 100%;
+      background: #2B2117;
+      color: #EADFCB;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .section {
+      display: none
+    }
+
+    .section.active {
+      display: block
+    }
+
+    .statbox {
+      background: #fff;
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+      border: 1px solid #F0E6D3
+    }
+
+    .statbox b {
+      display: block
+    }
+
+    .viewer {
+      font-size: 10px;
+      background: #2B2117;
+      color: #EADFCB;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin: 4px 0
+    }
+
+    .ad-box {
+      background: #F5EFE6;
+      border: 2px dashed #B89B7A;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      margin: 10px 0;
+      font-size: 11px
+    }
+
+    .ad-btn {
+      background: #fff;
+      border: 1px solid #EADFCB;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 11px;
+      text-align: center
+    }
+
+    .ad-btn-anim {
+      background: #FFE9A8;
+      border: 1px solid #EADFCB;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 11px;
+      text-align: center
+    }
+
+    .filter-btn {
+      padding: 6px 10px;
+      border-radius: 20px;
+      border: 1px solid #D9C5A5;
+      background: #fff;
+      font-size: 10px;
+      cursor: pointer
+    }
+
+    .filter-btn.active {
+      background: #2B2117;
+      color: #EADFCB
+    }
+
+    .seller-card {
+      background: #fff;
+      border: 1px solid #F0E6D3;
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: #ff0000;
+      border-radius: 50%;
+      display: inline-block;
+      animation: blink 1s infinite
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .sensor {
+      filter: blur(6px);
+      background: #ddd;
+      padding: 0 6px;
+      border-radius: 4px;
+      user-select: none
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px
+    }
+
+    @media(max-width:700px) {
+      .foot-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .foot-box {
+      background: #fff;
+      border: 1px solid #F0E6D3;
+      border-radius: 12px;
+      padding: 12px
+    }
+
+    .wa-float {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 99;
+      background: #25D366;
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .25)
+    }
+
+    .empty {
+      padding: 20px;
+      text-align: center;
+      background: #F9F3E8;
+      border-radius: 12px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #666;
+    }
+       /* SPLASH SATU BLOK - JANGAN DOBEL */
+.splash{
+  position:fixed !important;
+  inset:0 !important;
+  width:100vw !important;
+  height:100dvh !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  background:#0B3D2E !important;
+  z-index:99999 !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  padding:20px !important;
+  margin:0 !important;
+  /* INI KUNCINYA: 3 detik, ilang sendiri pake CSS, gak pake JS */
+  animation: splashMati 0.5s ease 3s forwards !important;
+}
+@keyframes splashMati{
+  to{ opacity:0; visibility:hidden; pointer-events:none; }
+}
+.splash .welcome{
+  font-size:11px !important;
+  letter-spacing:6px !important;
+  color:#fff !important;
+  opacity:1 !important;
+  animation:naik 0.8s ease both !important;
+}
+.splash .title{
+  font-size:clamp(24px, 8vw, 38px) !important;
+  color:#fff !important;
+  margin:8px 0 !important;
+  animation:naik 0.8s 0.15s ease both !important;
+}
+.splash.hidden{
+  display:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+}
+.splash .seals{ display:flex !important; gap:12px !important; margin:16px 0 !important; animation:naik 0.8s 0.3s ease both !important; }
+.splash .seals img{ width:56px !important; height:56px !important; }
+.splash .tagline{ font-size:10px !important; letter-spacing:2px !important; color:#F5E6B8 !important; animation:naik 0.8s 0.45s ease both !important; }
+.splash #btnSkip{
+  margin-top:18px !important;
+  background:#F5E6B8 !important;
+  color:#000 !important;
+  border:2px solid #000 !important;
+  padding:12px 22px !important;
+  border-radius:25px !important;
+  cursor:pointer !important;
+  font-weight:bold !important;
+  font-size:14px !important;
+  letter-spacing:2px !important;
+  pointer-events:auto !important;
+  position:relative !important;
+  z-index:10 !important;
+
+}
+@keyframes naik{
+  from{ opacity:0; transform:translateY(20px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.bb-marquee-wrap {
+  position: relative;
+  background: #EEF2DC;
+  border-top: 2px solid #1A4D2E;
+  border-bottom: 2px solid #1A4D2E;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0 10px 130px;
+  display: flex;
+  align-items: center;
+}
+.bb-marquee-logo {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  z-index: 2;
+  background: transparent;
+}
+.bb-marquee-track {
+  display: inline-flex;
+  animation: bb-marquee 20s linear infinite;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #1A4D2E;
+  font-family: Arial, sans-serif;
+}
+@keyframes bb-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (max-width: 480px) {
+  .bb-marquee-wrap { padding-left: 95px; }
+  .bb-marquee-logo { width: 80px; height: 80px; }
+  .bb-marquee-track { font-size: 18px; }
+}
+.header-nav{
+  display:flex;
+  gap:4px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-left:auto;
+}
+.header{
+  padding: 6px 10px !important;
+}
+.nav{
+  gap: 8px !important;
+}
+.mbtn{
+  padding: 5px 9px !important;
+}
+.bb-marquee-wrap{
+  margin-top: 0 !important;
+  padding: 6px 0 6px 130px !important;
+}
+</style>
+</head>
+
+<body>
+  
+ <style>
+  body{font-family:Arial,sans-serif;margin:0;padding:20px;background:#f5f5f5}
+  /* TOMBOL WAX SEAL - KIRI BAWAH */
+  #bodo-seal-btn{
+    position:fixed;left:16px;bottom:16px;z-index:9999;
+    width:78px;height:78px;border:none;background:transparent;cursor:pointer;
+    animation: bounce 2s infinite;
+  }
+  #bodo-seal-btn img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.3));border-radius:50%}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  /* BOX CHAT */
+  #bodo-chat{
+    position:fixed;left:16px;bottom:104px;z-index:9999;width:320px;max-width:calc(100vw - 32px);
+    background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;display:none;
+  }
+  #bodo-chat.show{display:block}
+  .bodo-head{background:#B91C1C;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+  .bodo-head img{width:38px;height:38px;border-radius:50%;background:#fff}
+  .bodo-head b{font-size:15px}
+  .bodo-head small{font-size:12px;opacity:.9}
+  .bodo-body{padding:12px;height:280px;overflow-y:auto;background:#FFF7F7}
+  .msg{background:#fff;border:1px solid #eee;padding:8px 10px;border-radius:12px;margin-bottom:8px;font-size:14px;line-height:1.4}
+  .msg.me{background:#DCFCE7;border-color:#BBF7D0;text-align:right}
+  .bodo-foot{padding:10px;display:flex;flex-direction:column;gap:8px}
+  .bodo-foot select,.bodo-foot input,.bodo-foot textarea{width:100%;padding:9px;border:1px solid #ddd;border-radius:10px;font-size:14px;box-sizing:border-box}
+  .bodo-foot button{background:#16A34A;color:#fff;border:none;padding:11px;border-radius:10px;font-weight:bold;cursor:pointer}
+  .bodo-foot button.send{background:#B91C1C}
+</style>
+
+<!-- ===== BODO-BOX PENJAGA BUNGA - START ===== -->
+<button id="bodo-seal-btn" onclick="toggleBodoChat()">
+  <img src="bodo-seal.png" alt="Bodo-Box Chat">
+</button>
+
+<div id="bodo-chat">
+  <div class="bodo-head">
+    <img src="bodo-seal.png" alt="logo">
+    <div><b>Penjaga Bunga Bodo-Box</b><br><small>Khusus Komplain Buyer • Online</small></div>
+  </div>
+  <div class="bodo-body" id="bodoBody">
+    <div class="msg">Halo kak! Maaf ya kalo ada yang gak beres 🙏<br>Ini CS Komplain Bodo-Box. Boleh ceritain keluhannya? Pilih jenisnya di bawah ya.</div>
+  </div>
+  <div class="bodo-foot">
+    <select id="jenis">
+      <option>Barang Telat</option>
+      <option>Barang Rusak / Cacat</option>
+      <option>Salah Kirim</option>
+      <option>Barang Belum Sampai</option>
+      <option>Lainnya</option>
+    </select>
+    <input id="nama" placeholder="Nama + No. Order, contoh: Yar - BB123">
+    <textarea id="pesan" rows="2" placeholder="Ceritain keluhannya..."></textarea>
+    <button class="send" onclick="kirimKomplain()">Terusin ke Founder via WA</button>
+  </div>
+</div>
+
+<script>
+function toggleBodoChat(){
+  document.getElementById('bodo-chat').classList.toggle('show');
+}
+function kirimKomplain(){
+  const jenis = document.getElementById('jenis').value;
+  const nama = document.getElementById('nama').value || '-';
+  const pesan = document.getElementById('pesan').value || '-';
+  const body = document.getElementById('bodoBody');
+  body.innerHTML += `<div class="msg me"><b>${jenis}</b><br>${nama}<br>${pesan}</div>`;
+  body.innerHTML += `<div class="msg">Siap kak, laporan lu udah gua catet. Klik tombol di bawah, nanti langsung kebuka WA Founder ya.</div>`;
+  body.scrollTop = body.scrollHeight;
+  const text = `Halo Founder Bodo-Box, ada KOMPLAIN baru:%0A%0A*Jenis:* ${encodeURIComponent(jenis)}%0A*Nama / No.Order:* ${encodeURIComponent(nama)}%0A*Keluhan:* ${encodeURIComponent(pesan)}`;
+  setTimeout(()=>{ window.open(`https://wa.me/6282125431779?text=${text}`,'_blank'); }, 500);
+}
+</script>
+<!-- ===== BODO-BOX PENJAGA BUNGA - END ===== -->
+ <div id="splash" class="splash">
+  <div class="welcome">WELCOME TO</div>
+  <div class="title">BODO-BOX.COM</div>
+  <div class="seals">
+    <img src="favicon-180.png" alt="Segel Bodo Box">
+    <img src="favicon-180.png" alt="Segel Bodo Box">
+  </div>
+  <div class="tagline">HONESTY • TRANSPARENCY • INTEGRITY</div>
+  <button id="btnSkip" type="button" onclick="document.getElementById('splash').style.display='none';this.style.display='none';document.body.style.overflow='auto'">SKIP &gt;&gt;</button>
+</div>
+<script>
+function lewatiIntro(){
+  var s = document.getElementById('splash');
+  if(s){ 
+    // pakai !important biar menang lawan CSS kamu
+    s.style.setProperty('display','none','important');
+    s.style.setProperty('opacity','0','important');
+    s.style.setProperty('visibility','hidden','important');
+    s.style.setProperty('pointer-events','none','important');
+  }
+  document.body.style.overflow = 'auto';
+  document.documentElement.style.overflow = 'auto';
+}
+// pasang sekali aja, biar ga dobel
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.getElementById('btnSkip');
+  if(btn){
+    btn.addEventListener('click', lewatiIntro);
+  }
+  // auto close 3 detik
+  setTimeout(lewatiIntro, 3000);
+});
+</script>
+</script>
+  
+
+<header class="header">
+    <div class="nav">
+      <div class="logo"><img class="logo-img" src="favicon-180.png" alt="Bodo-Box">
+          <div class="brand">BODO-BOX.COM</div>
+          <div class="tag">Honesty Transparency Integrity</div>
+        </div>
+      <!-- GANTI JADI INI: -->
+<div class="header-nav" style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin-left:auto;">
+  <button class="mbtn" onclick="go('beranda')">Beranda</button>
+  <button class="mbtn" onclick="go('katalog')">Katalog</button>
+  <button class="mbtn" onclick="go('seller')">Seller</button>
+  <button class="mbtn" onclick="go('trans')">Transparency</button>
+  <button class="mbtn" onclick="window.location.href='star-code.html'" style="background:#FFD700">STAR CODE</button>
+    </div>
+  </header>
+  <!-- MARQUEE BODO-BOX.COM - MUNCUL DI 10 FITUR -->
+<div class="bb-marquee-wrap">
+  <img src="/logo-segel.png" class="bb-marquee-logo" alt="Bodo-Box Seal">
+  <div class="bb-marquee-track">
+    <span>HONESTY • TRANSPARENCY • INTEGRITY • HONESTY • TRANSPARENCY • INTEGRITY •&nbsp;</span>
+    <span>HONESTY • TRANSPARENCY • INTEGRITY • HONESTY • TRANSPARENCY • INTEGRITY •&nbsp;</span>
+  </div>
+</div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:12px">
+
+    <!-- BERANDA -->
+    <div id="beranda" class="section active">
+      <div class="card" style="background:#DDCBB1;display:flex;gap:10px;align-items:center">
+        <div style="flex:1">
+          <h1 style="margin-top:6px">Wax seal,<br>Bodo-Box</h1>
+          <p style="font-size:11px;line-height:1.6">Stiker wax seal Bodo-Box.Com</p>
+        </div><img src="produk.jpeg" style="width:180px;height:180px;border-radius:50%;object-fit:cover"
+          onerror="this.src='https://via.placeholder.com/400'">
+      </div>
+      <span class="viewer">👁️ Dilihat: <b id="view-beranda">0</b> kali</span><!-- ===== MULAI KIP THORNE - KENAPA KAMI ADA ===== -->
+<section style="background:#0a1a12; color:#f5ecd7; padding:35px 20px; margin:20px 12px; border-radius:20px; font-family:Georgia,serif; text-align:center;">
+  
+  <div style="font-size:12px; letter-spacing:4px; color:#b8d8c0;">KENAPA KAMI ADA</div>
+  
+  <h2 style="font-size:28px; line-height:1.2; margin:12px 0 5px; font-weight:900;">BUANG KARBONMU,<br>DAPATKAN OKSIGENMU.</h2>
+  
+  <div style="width:50px; height:2px; background:#f5ecd7; margin:15px auto;"></div>
+
+  <div style="font-size:15px; line-height:1.8; text-align:left; max-width:600px; margin:0 auto;">
+    <p>Kamu pikir kamu hidup di masa kini? Salah.</p>
+    <p>Cahaya matahari yang kamu rasakan siang ini adalah cahaya 8 menit yang lalu. Bintang yang kamu lihat malam ini adalah cahaya 1000 tahun yang lalu. Bahkan napas yang kamu hirup barusan adalah oksigen yang dibuat pohon 10 tahun yang lalu.</p>
+    <p>Semua yang kamu lihat, dengar, dan rasakan adalah produk masa lalu. Kita semua sedang berdiri di museum masa lalu yang masih hidup.</p>
+    <p>Lalu kamu siapa? Kamu adalah satu-satunya produk baru di alam semesta ini. Bayi yang lahir hari ini, ide yang muncul hari ini, pohon yang kamu tanam hari ini — itulah masa kini.</p>
+    <p>Jadi untuk apa mesin waktu kembali ke belakang? Film Interstellar sibuk mencari cara pulang ke masa lalu. Kami di BODO-BOX sibuk bertanya: masa depan itu seperti apa?</p>
+    <p>Kami tidak menjual sertifikat karbon.<br>Kami tidak menjual rasa bersalah.</p>
+    <p style="text-align:center; font-weight:700; font-size:17px; margin:15px 0;">Kami menanam mesin waktu.</p>
+    <p>Satu pohon Baobab yang kamu tanam hari ini akan hidup 1000 tahun. Kamu akan mati, kami akan mati, tapi dia masih di sana — memberi oksigen untuk 5 keluarga, untuk anak cucumu, untuk orang yang belum lahir.</p>
+    <p>Kamu tidak perlu wormhole ala Kip Thorne untuk bicara dengan masa depan. Cukup tanam satu pohon. Dan masa depan akan menghirup pesanmu.</p>
+  </div>
+
+  <div style="margin-top:20px; font-size:14px; letter-spacing:3px; font-weight:700;">BODO-BOX<br><span style="font-size:11px; letter-spacing:2px; font-weight:400; color:#b8d8c0;">Honesty. Transparency. Integrity.</span></div>
+
+  <a href="#katalog" style="display:inline-block; margin-top:18px; background:#f5ecd7; color:#0a1a12; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:700; font-size:14px;">TANAM POHONMU SEKARANG →</a>
+
+</section>
+<!-- ===== SELESAI KIP THORNE ===== -->
+      <div class="card"><b style="font-size:13px;">📊 LIVE VIEWER REAL-TIME</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px;text-align:center;">
+          <div class="statbox"><small>Online</small><b id="onlineNow">0</b></div>
+          <div class="statbox"><small>Hari Ini</small><b>0</b></div>
+          <div class="statbox"><small>Minggu Ini</small><b>0</b></div>
+          <div class="statbox"><small>Bulan Ini</small><b>0</b></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;text-align:center;">
+          <div class="statbox"><small>Tahun Ini</small><b>0</b></div>
+          <div class="statbox"><small>Total</small><b>0</b></div>
+        </div>
+        <div style="margin-top:10px;font-size:11px;background:#F9F3E8;padding:8px;border-radius:10px;line-height:1.6;">
+          <b>📍 Top Kota Viewer:</b><br>Belum ada data viewer. Data akan muncul setelah ada yang buka website
+          ini.<br><small style="color:#888;">*Data level kota, bukan lokasi persis. Aman privasi.</small></div>
+      </div>
+      <div class="card" style="background:#1a3c2a;color:#fff;"><b style="font-size:13px;">📢 PASANG IKLAN DI BERANDA</b>
+        <p style="font-size:11px;opacity:.85;">Slot terbatas. Tayang setelah pembayaran dikonfirmasi Admin.</p>
+        <p style="font-size:12px;margin-top:10px;"><b>1. BANNER (Diam)</b></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;"><button class="ad-btn"
+            onclick="pilihIklan('Banner Size 1 - 1100x200','Rp 150.000 / 7 hari')">Size 1<br><small>1100x200<br>Rp
+              150rb</small></button><button class="ad-btn"
+            onclick="pilihIklan('Banner Size 2 - 800x200','Rp 100.000 / 7 hari')">Size 2<br><small>800x200<br>Rp
+              100rb</small></button><button class="ad-btn"
+            onclick="pilihIklan('Banner Size 3 - 300x300','Rp 50.000 / 7 hari')">Size 3<br><small>300x300<br>Rp
+              50rb</small></button></div>
+        <p style="font-size:12px;margin-top:12px;"><b>2. ANIMASI (Gerak)</b></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;"><button class="ad-btn-anim"
+            onclick="pilihIklan('Animasi Full Gerak','Rp 250.000 / 7 hari')">Full Animasi<br><small>Rp
+              250rb</small></button><button class="ad-btn-anim"
+            onclick="pilihIklan('Logo Klien Bisa Gerak','Rp 180.000 / 7 hari')">Logo Gerak<br><small>Rp
+              180rb</small></button><button class="ad-btn-anim"
+            onclick="pilihIklan('Foto Jadi Animasi','Rp 150.000 / 7 hari')">Foto Animasi<br><small>Rp
+              150rb</small></button></div>
+      </div>
+      <div id="formIklan" style="display:none;" class="card"><b id="judulPilihan" style="font-size:13px;">Banner Size
+          1</b><br><small id="hargaPilihan" style="color:#8B3A2F;font-weight:700;">Rp 150.000 / 7 hari</small>
+        <p style="font-size:11px;background:#FFF3CD;padding:8px;border-radius:8px;margin-top:8px;">⚠️ <b>Syarat:</b> Isi
+          form lengkap -> Pilih pembayaran -> Kirim. Iklan baru tayang setelah Admin konfirmasi pembayaran.</p><input
+          id="ikNama" class="input" placeholder="Nama Usaha *"><input id="ikWA" class="input"
+          placeholder="No WA *"><input id="ikLink" class="input"
+          placeholder="Link tujuan kalo iklan di-klik (IG / WA / Website)"><input id="ikTgl" type="date"
+          class="input"><label style="font-size:11px;">Upload Logo / Foto:</label><input type="file" id="ikFile"
+          class="input"><label style="font-size:12px;"><b>Pilih Pembayaran:</b></label><select id="ikBayar"
+          class="input">
+          <option>Transfer Bank - BCA 1234567890 a.n Bodo Box</option>
+          <option>QRIS - Scan di langkah berikutnya</option>
+          <option>E-Wallet - DANA / OVO / GoPay 081285767528</option>
+          <option>COD / Bayar di Tempat (Khusus Bogor)</option>
+        </select><label style="font-size:11px;">Upload Bukti Bayar:</label><input type="file" id="ikBukti"
+          class="input"><button class="btnp" onclick="kirimIklan()">KIRIM PENGAJUAN KE ADMIN →</button>
+        <p id="statusIklan" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <div class="ad-box"><b>SLOT IKLAN BERANDA - 1100x200</b><br>Belum ada iklan. WA 081285767528 untuk pasang</div>
+      <h3 style="margin:12px 0 8px">Semua Produk bodo-box</h3>
+      <div id="gridProduk" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;"></div>
+      <div id="gridBeranda" class="grid"></div>
+    </div>
+
+    <!-- KATALOG -->
+    <div id="katalog" class="section">
+      <h3>1. Katalog</h3><span class="viewer">👁️ Dilihat: <b id="view-katalog">0</b> kali</span>
+      <div class="card"><b style="font-size:13px;">📊 LIVE KATALOG</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;text-align:center;">
+          <div class="statbox"><small>🔴 Lagi Liat Katalog</small><b>0 orang</b></div>
+          <div class="statbox"><small>Hari Ini Buka Katalog</small><b>0 orang</b></div>
+          <div class="statbox"><small>Total Diliat</small><b>0</b></div>
+        </div>
+        <div style="margin-top:10px;font-size:11px;background:#FFF3CD;padding:8px;border-radius:10px;line-height:1.6;">
+          Belum ada data produk paling diliat. Data muncul setelah ada buyer yang buka katalog.</div>
+      </div>
+      <div class="card" style="background:#2B2117;color:#EADFCB;"><b style="font-size:13px;">📢 PASANG IKLAN DI
+          KATALOG</b>
+        <p style="font-size:11px;opacity:.85;">Yang liat di sini udah niat beli.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;"><button class="ad-btn"
+            onclick="pilihIklanKatalog('KATALOG - Banner Size 1 Atas Produk','Rp 200.000 / 7 hari')">Size 1<br><small>Rp
+              200rb</small></button><button class="ad-btn"
+            onclick="pilihIklanKatalog('KATALOG - Banner Size 2 Tengah Produk','Rp 150.000 / 7 hari')">Size
+            2<br><small>Rp 150rb</small></button><button class="ad-btn"
+            onclick="pilihIklanKatalog('KATALOG - Banner Size 3 Bawah','Rp 75.000 / 7 hari')">Size 3<br><small>Rp
+              75rb</small></button></div>
+      </div>
+      <div id="formIklanKatalog" style="display:none;" class="card"><b id="judulPilihanKatalog"
+          style="font-size:13px;">Katalog Banner Size 1</b><br><small id="hargaPilihanKatalog"
+          style="color:#8B3A2F;font-weight:700;">Rp 200.000 / 7 hari</small><input id="ikNamaK" class="input"
+          placeholder="Nama Usaha *"><input id="ikWAK" class="input" placeholder="No WA *"><input id="ikLinkK"
+          class="input" placeholder="Link tujuan (IG / WA / Website)"><input id="ikTglK" type="date"
+          class="input"><button class="btnp" onclick="kirimIklanKatalog()">KIRIM PENGAJUAN KE ADMIN →</button>
+        <p id="statusIklanKatalog" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <div class="ad-box"><b>SLOT IKLAN KATALOG - 1100x200</b><br>Belum ada iklan.</div>
+      <div class="card"><input id="cariKatalog" class="input" placeholder="🔍 Cari produk..." oninput="filterKatalog()">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;"><button class="filter-btn active"
+            onclick="setFilterHarga('semua',this)">Semua</button><button class="filter-btn"
+            onclick="setFilterHarga('murah',this)">Di bawah 100rb</button><button class="filter-btn"
+            onclick="setFilterHarga('sedang',this)">100rb - 300rb</button><button class="filter-btn"
+            onclick="setFilterHarga('mahal',this)">Di atas 300rb</button></div><select id="urutKatalog" class="input"
+          style="margin-top:8px;margin-bottom:0;" onchange="filterKatalog()">
+          <option value="default">Urutkan: Default</option>
+          <option value="murah">Termurah - Termahal</option>
+          <option value="mahal">Termahal - Termurah</option>
+          <option value="nama">Nama A - Z</option>
+        </select>
+        <p id="hasilKatalog" style="font-size:11px;color:#888;margin:8px 0 0;">Menampilkan 0 produk</p>
+      </div>
+      <div id="gridKatalog" class="grid"></div>
+    </div>
+
+    <!-- SELLER -->
+    <div id="seller" class="section">
+      <h3>2. Seller Box</h3><span class="viewer">👁️ Dilihat: <b id="view-seller">0</b> kali</span>
+      <div class="card"><b style="font-size:13px;">📊 LIVE SELLER</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px;text-align:center;">
+          <div class="statbox"><small>🔴 Lagi Liat Seller</small><b>0 orang</b></div>
+          <div class="statbox"><small>Seller Aktif</small><b>0 Seller</b></div>
+          <div class="statbox"><small>Produk Seller Terjual</small><b>0</b></div>
+          <div class="statbox"><small>Omset Seller Bln Ini</small><b>Rp 0</b></div>
+        </div>
+        <div style="margin-top:10px;font-size:11px;background:#E8F5E9;padding:8px;border-radius:10px;line-height:1.6;">
+          Belum ada seller. Kamu yang pertama? Daftar gratis.</div>
+      </div>
+      <div class="card" style="background:#2D5A3A;color:#fff;text-align:center;"><b style="font-size:15px;">🤝 MAU JADI
+          SELLER BODO-BOX?</b>
+        <p style="font-size:11px;opacity:.9;">Titip jual produk kamu di sini. Kita yang jualin, kamu tetep
+          dikenal.<br>Daftar GRATIS.</p><button
+          onclick="document.getElementById('formSeller').scrollIntoView({behavior:'smooth'})"
+          style="background:#fff;color:#2D5A3A;border:none;padding:10px 18px;border-radius:20px;font-weight:700;cursor:pointer;">DAFTAR
+          JADI SELLER →</button>
+      </div>
+      <div class="card" style="background:#2B2117;color:#EADFCB;"><b style="font-size:13px;">📢 PASANG IKLAN DI SELLER
+          BOX</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;"><button class="ad-btn"
+            onclick="pilihIklanSeller('SELLER - Banner Size 1','Rp 200.000 / 7 hari')">Size 1<br><small>Rp
+              200rb</small></button><button class="ad-btn"
+            onclick="pilihIklanSeller('SELLER - Banner Size 2','Rp 150.000 / 7 hari')">Size 2<br><small>Rp
+              150rb</small></button><button class="ad-btn"
+            onclick="pilihIklanSeller('SELLER - Banner Size 3','Rp 75.000 / 7 hari')">Size 3<br><small>Rp
+              75rb</small></button></div>
+      </div>
+      <div id="formIklanSeller" style="display:none;" class="card"><b id="judulPilihanSeller"
+          style="font-size:13px;">Seller Banner Size 1</b><br><small id="hargaPilihanSeller"
+          style="color:#8B3A2F;font-weight:700;">Rp 200.000 / 7 hari</small><input id="ikNamaS" class="input"
+          placeholder="Nama Usaha *"><input id="ikWAS" class="input" placeholder="No WA *"><button class="btnp"
+          onclick="kirimIklanSeller()">KIRIM PENGAJUAN KE ADMIN →</button>
+        <p id="statusIklanSeller" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <div class="ad-box"><b>SLOT IKLAN SELLER - 1100x200</b><br>Belum ada iklan. WA 081285767528</div>
+      <div class="card"><b style="font-size:13px;">📋 4 SYARAT JADI SELLER BODO-BOX</b>
+        <div style="font-size:12px;line-height:1.9;margin-top:8px;">1. ✅ <b>Produk baik, jujur</b><br>2. ✅ <b>Siap
+            transparan soal modal & laba</b><br>3. ✅ <b>Siap sedekah 10% dari laba bersih</b><br>4. ✅ <b>Wajib WA aktif
+            & bisa kirim foto produk</b></div>
+      </div>
+      <div class="card" style="border:2px solid #2D5A3A;"><b style="font-size:13px;">🧮 KALKULATOR BAGI HASIL -
+          TRANSPARAN</b><label style="font-size:11px;">Modal per produk (Rp)</label><input id="calcModal" type="number"
+          class="input" value="" placeholder="Contoh: 180000" oninput="hitungBagiHasil()"><label
+          style="font-size:11px;">Harga jual (Rp)</label><input id="calcJual" type="number" class="input" value=""
+          placeholder="Contoh: 300000" oninput="hitungBagiHasil()">
+        <div id="hasilBagiHasil"
+          style="font-size:12px;background:#E8F5E9;padding:10px;border-radius:10px;line-height:1.8;">Isi modal & harga
+          jual dulu untuk liat bagi hasil.</div>
+      </div>
+      <div id="formSeller" class="card"><b style="font-size:13px;">📝 FORM DAFTAR JADI SELLER</b><input id="sNama"
+          class="input" placeholder="Nama Lengkap *"><input id="sWA" class="input" placeholder="No WA Aktif *"><input
+          id="sUsaha" class="input" placeholder="Nama Usaha *"><input id="sProduk" class="input"
+          placeholder="Produk apa yang mau dititip jual? *"><input id="sModal" class="input"
+          placeholder="Modal per produk (Rp)"><input id="sHarga" class="input"
+          placeholder="Rencana harga jual (Rp)"><textarea id="sCerita" class="input"
+          placeholder="Cerita singkat usaha kamu..."></textarea><label style="font-size:12px;"><input type="checkbox"
+            id="sSetuju"> Saya setuju 4 syarat Seller</label><br><br><button class="btnp" style="background:#2D5A3A;"
+          onclick="kirimSeller()">KIRIM PENDAFTARAN SELLER →</button>
+        <p id="statusSeller" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <h3 style="margin:12px 0 8px;">Seller Aktif di Bodo-Box</h3>
+      <div id="gridSeller" class="grid"></div>
+      <div id="listSellerContoh" class="empty">Belum ada seller aktif.<br><small>Seller pertama akan tampil di sini
+          setelah Admin setujui pendaftaran.</small></div>
+    </div>
+
+    <!-- REAL-TIME -->
+    <div id="realtime" class="section">
+      <h3>3. Box Real-time</h3><span class="viewer">👁️ Dilihat: <b id="view-realtime">0</b> kali | <span
+          class="live-dot"></span> LIVE</span>
+      <div class="card" style="border:2px solid #C62828;"><b style="font-size:13px;"><span class="live-dot"></span> LIVE
+          - CCTV TOKO BODO-BOX</b>
+        <p style="font-size:11px;background:#FFF3CD;padding:8px;border-radius:8px;margin-top:8px;">Semua angka di bawah
+          ini dari data asli. Nama buyer disamarkan demi privasi (B***o). Gak ada yang ditutup-tutupin.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div class="statbox" style="border-top:4px solid #2B2117;"><small>📦 Stok Sisa</small><b
+            style="font-size:18px;">0 pcs</b></div>
+        <div class="statbox" style="border-top:4px solid #2D5A3A;"><small>✅ Terjual</small><b style="font-size:18px;">0
+            pcs</b></div>
+        <div class="statbox" style="border-top:4px solid #1565C0;"><small>💰 Omset</small><b style="font-size:18px;">Rp
+            0</b></div>
+        <div class="statbox" style="border-top:4px solid #8B3A2F;"><small>📈 Laba Bersih</small><b
+            style="font-size:18px;">Rp 0</b></div>
+      </div>
+      <div class="card" style="background:#E8F5E9;border:2px solid #2D5A3A;text-align:center;margin-top:8px;"><small>🌱
+          DANA SEDEKAH 10% YANG UDAH KEKUMPUL</small><b style="display:block;font-size:20px;color:#2D5A3A;">Rp
+          0</b><small style="font-size:11px;">= 0 bibit siap ditanam. Bukti di Transparency Box.</small><br><button
+          onclick="go('trans')"
+          style="background:#2D5A3A;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-size:11px;cursor:pointer;margin-top:6px;">Lihat
+          Bukti Penyaluran →</button></div>
+      <div class="card" style="background:#2B2117;color:#EADFCB;"><b style="font-size:13px;">📢 PASANG IKLAN DI
+          REAL-TIME</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;"><button class="ad-btn"
+            onclick="pilihIklanRT('REAL-TIME - Banner Size 1','Rp 200.000 / 7 hari')">Size 1<br><small>Rp
+              200rb</small></button><button class="ad-btn"
+            onclick="pilihIklanRT('REAL-TIME - Banner Size 2','Rp 150.000 / 7 hari')">Size 2<br><small>Rp
+              150rb</small></button><button class="ad-btn"
+            onclick="pilihIklanRT('REAL-TIME - Banner Size 3','Rp 75.000 / 7 hari')">Size 3<br><small>Rp
+              75rb</small></button></div>
+      </div>
+      <div id="formIklanRT" style="display:none;" class="card"><b id="judulPilihanRT" style="font-size:13px;">Real-time
+          Banner Size 1</b><br><small id="hargaPilihanRT" style="color:#8B3A2F;font-weight:700;">Rp 200.000 / 7
+          hari</small><input id="ikNamaRT" class="input" placeholder="Nama Usaha *"><input id="ikWART" class="input"
+          placeholder="No WA *"><button class="btnp" onclick="kirimIklanRT()">KIRIM PENGAJUAN KE ADMIN →</button>
+        <p id="statusIklanRT" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <div class="card"><b style="font-size:13px;">🧾 TRANSAKSI TERAKHIR - LIVE</b>
+        <div id="rtTable" style="margin-top:8px;" class="empty">Belum ada transaksi.<br><small>Transaksi asli akan
+            muncul di sini setelah ada buyer yang beli.</small></div>
+      </div>
+      <div class="card"><b style="font-size:13px;">📦 STOK PER PRODUK - LIVE</b>
+        <div id="rtStokProduk" style="font-size:11px;margin-top:8px;" class="empty">Belum ada produk, jadi belum ada
+          stok.</div>
+      </div>
+    </div>
+
+    <!-- TRANSPARENCY -->
+    <div id="trans" class="section">
+      <h3>4. Transparency Box</h3><span class="viewer">👁️ Dilihat: <b id="view-trans">0</b> kali</span>
+      <div class="card" style="border:2px solid #2D5A3A;"><b style="font-size:13px;">🔍 BUKTI, BUKAN JANJI -
+          TRANSPARENCY BOX</b>
+        <p style="font-size:11px;background:#E8F5E9;padding:8px;border-radius:8px;margin-top:8px;">Semua penyaluran ada
+          buktinya: Foto / Video / Invoice / Kwitansi. NIB dipajang, NPWP & KTP disensor demi keamanan.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div class="statbox" style="border-top:4px solid #2D5A3A;"><small>🌱 Dana 10% Terkumpul</small><b
+            style="font-size:16px;">Rp 0</b></div>
+        <div class="statbox" style="border-top:4px solid #1565C0;"><small>✅ Terpakai</small><b
+            style="font-size:16px;">Rp 0</b></div>
+        <div class="statbox" style="border-top:4px solid #FF8F00;"><small>💰 Sisa</small><b style="font-size:16px;">Rp
+            0</b></div>
+        <div class="statbox" style="border-top:4px solid #8B3A2F;"><small>🌿 Bibit Tertanam</small><b
+            style="font-size:16px;">0 bibit</b></div>
+      </div>
+      <div class="card" style="background:#2D5A3A;color:#fff;text-align:center;margin-top:8px;"><small>🗺️ TOTAL LAHAN
+          MITRA YANG UDAH DITANAMI</small><b style="display:block;font-size:20px;">Belum ada lahan yang
+          ditanami</b><small style="opacity:.85;">Lahan akan muncul di sini setelah Mitra pertama bergabung &
+          ditanami.</small><br><button onclick="go('mitra')"
+          style="background:#fff;color:#2D5A3A;border:none;padding:8px 14px;border-radius:20px;font-size:11px;cursor:pointer;margin-top:6px;font-weight:700;">Lihat
+          Lahan Mitra →</button></div>
+      <div class="card" style="background:#2B2117;color:#EADFCB;"><b style="font-size:13px;">📢 PASANG IKLAN DI
+          TRANSPARENCY</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;"><button class="ad-btn"
+            onclick="pilihIklanTrans('TRANSPARENCY - Banner Size 1','Rp 200.000 / 7 hari')">Size 1<br><small>Rp
+              200rb</small></button><button class="ad-btn"
+            onclick="pilihIklanTrans('TRANSPARENCY - Banner Size 2','Rp 150.000 / 7 hari')">Size 2<br><small>Rp
+              150rb</small></button><button class="ad-btn"
+            onclick="pilihIklanTrans('TRANSPARENCY - Banner Size 3','Rp 75.000 / 7 hari')">Size 3<br><small>Rp
+              75rb</small></button></div>
+      </div>
+      <div id="formIklanTrans" style="display:none;" class="card"><b id="judulPilihanTrans"
+          style="font-size:13px;">Transparency Banner Size 1</b><br><small id="hargaPilihanTrans"
+          style="color:#8B3A2F;font-weight:700;">Rp 200.000 / 7 hari</small><input id="ikNamaTrans" class="input"
+          placeholder="Nama Usaha *"><input id="ikWATrans" class="input" placeholder="No WA *"><button class="btnp"
+          onclick="kirimIklanTrans()">KIRIM PENGAJUAN KE ADMIN →</button>
+        <p id="statusIklanTrans" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <div class="ad-box"><b>SLOT IKLAN TRANSPARENCY - 1100x200</b><br>Belum ada iklan.</div>
+      <div class="card" style="border:2px solid #FF8F00;"><b style="font-size:13px;">🧡 CSR BODO-BOX 10% - DUIT KITA
+          SENDIRI, BUKAN TITIPAN BUYER</b>
+        <p style="font-size:11px;line-height:1.6;">Ini beda sama Dana Tanam 10% di atas. Kalo Dana Tanam itu titipan
+          dari lu (buyer). Kalo CSR ini dari kantong perusahaan kami sendiri, setelah Dana Tanam dipisah. Rumus kunci:
+          <b>Laba Bersih - 10% Tanam - 10% CSR = Sisa Perusahaan.</b> Jadi total 20% laba bersih buat kebaikan.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;text-align:center;">
+          <div class="statbox"><small>🧡 CSR Terkumpul</small><b style="font-size:16px;">Rp 0</b><small
+              style="color:#888;">10% dari Laba Bersih</small></div>
+          <div class="statbox"><small>✅ CSR Terpakai</small><b style="font-size:16px;">Rp 0</b><small
+              style="color:#888;">Belum disalurkan</small></div>
+          <div class="statbox"><small>💰 CSR Sisa</small><b style="font-size:16px;">Rp 0</b><small
+              style="color:#888;">Siap disalurkan</small></div>
+        </div>
+        <p style="font-size:11px;background:#FFF3E8;padding:8px;border-radius:8px;margin-top:8px;">Contoh CSR: Bantu
+          Mitra beli selang air, pupuk, alat siram, bantu warga sekitar lahan. BUKAN buat beli pohon lagi, pohon udah
+          dari Dana Tanam. Bukti CSR: Kwitansi + Foto bantuan, diupload di sini.</p>
+        <div id="csrTable" style="font-size:11px;margin-top:8px;">Belum ada penyaluran CSR. Begitu ada, kwitansi + foto
+          akan tampil di sini.</div>
+      </div>
+      <div class="card"><b style="font-size:13px;">📋 TABEL PENYALURAN DANA 10% - LENGKAP</b>
+        <p style="font-size:11px;color:#666;">Level bukti: 📸 Foto Wajib | 🎥 Video kalo di atas 500rb | 🧾 Invoice buat
+          beli bibit | ✍️ Kwitansi buat bayar petani / sewa lahan</p>
+        <div id="trTable" class="empty">Belum ada penyaluran Dana 10%.<br><small>Penyaluran asli + bukti foto / kwitansi
+            akan tampil di sini.</small></div>
+        <div id="gridBukti" class="grid" style="margin-top:10px;"></div>
+      </div>
+      <div class="card" style="border:2px solid #1565C0;"><b style="font-size:13px;">🏛️ BUKTI BAYAR PAJAK - FULL
+          TRANSPARAN</b>
+        <p style="font-size:11px;color:#666;">Nominal & status kita buka full. Yang disensor cuma NPWP & NIK demi
+          keamanan. NIB dipajang karena emang publik.</p>
+        <div style="font-size:12px;line-height:1.9;background:#E3F2FD;padding:10px;border-radius:10px;">Nama Usaha:
+          <b>BODO-BOX.COM</b><br>NIB: <b>1710260006549</b> <span
+            style="font-size:10px;background:#E8F5E9;color:#2D5A3A;padding:2px 6px;border-radius:10px;">✅ Publik - Bisa
+            dicek di OSS</span><br>NPWP: <span class="sensor">12.345.678.9-XXX.XXX</span> <small
+            style="color:#888;">(Disensor demi keamanan)</small><br>NIK Founder: <span
+            class="sensor">32XXXXXXXXXXXXXX</span> <small style="color:#888;">(Disensor)</small><br>Periode: <b>Belum
+            ada pembayaran pajak yang diupload</b><br>Jenis Pajak: <b>PPh Final UMKM</b><br>Nominal Dibayar: <b
+            style="color:#1565C0;">Rp 0</b><br>Status: <b>Belum ada bukti - Akan diupload Admin setelah bayar</b></div>
+      </div>
+      <div class="card" style="border:2px solid #8B3A2F;"><b style="font-size:13px;">💰 TRANSPARANSI GAJI - RANGE +
+          PERSETUJUAN</b>
+        <div id="gajiList" class="empty">Belum ada data gaji yang disetujui untuk ditampilin.<br><small>Gaji hanya
+            tampil kalo karyawan sudah setuju.</small></div>
+        <p style="font-size:10px;background:#FFF3CD;padding:8px;border-radius:8px;margin-top:8px;">ℹ️ Rincian pakai gaji
+          founder disimpan dulu, dibuka di Phase 2 setelah orang paham filosofi Bodo-Box. Status: HOLD.</p>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div id="video" class="section">
+      <div class="card"><b>SCAN QR DI DALAM PAKET KAMU</b>
+        <p>1 QR buat semua buyer. Ada di dalam paket.</p><img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://bodo-box.com/video"
+          style="width:130px;">
+        <p>bodo-box.com/video</p><button onclick="document.getElementById('formVideoBuyer').scrollIntoView()">KIRIM
+          VIDEO</button> <button onclick="document.getElementById('videoMitraList').scrollIntoView()">LIAT VIDEO
+          MITRA</button>
+      </div>
+      <div id="formVideoBuyer" class="card"><b>KIRIM VIDEO - PILIH SALAH SATU</b>
+        <div style="margin:8px 0;"><button id="optUnboxing" onclick="pilihJenisVideo('unboxing')">VIDEO
+            UNBOXING</button> <button id="optTanam" onclick="pilihJenisVideo('tanam')">VIDEO TANAM</button></div><input
+          id="vidNama" class="input" placeholder="Nama Buyer *"><input id="vidWA" class="input"
+          placeholder="No WA Buyer *"><input id="vidOrder" class="input" placeholder="No Order BB-001 *"><input
+          id="vidJudul" class="input" placeholder="Judul Video"><input type="file" id="vidFile" accept="video/*"
+          class="input"><textarea id="vidCerita" class="input"
+          placeholder="Cerita singkat video kamu..."></textarea><button class="btnp" onclick="kirimVideoBuyer()">KIRIM
+          VIDEO KE ADMIN CMS</button>
+        <p id="statusVideo"></p>
+      </div>
+      <div class="card" style="border:2px dashed #C62828;"><b>CMS ADMIN - VIDEO BUYER MASUK</b>
+        <p>Admin klik Setuju / Tolak, terus Kirim Notif WA (Gratis).</p>
+        <div id="cmsVideoList" class="empty">Belum ada video buyer yang masuk.</div>
+      </div>
+      <div id="videoMitraList" class="card"><b>VIDEO MITRA - LIAT HABIS SCAN QR</b>
+        <p>Bibit ini ditanam dari 10% laba pembelian kamu & buyer lain.</p>
+        <div id="gridVideoMitra" class="empty">Belum ada video Mitra. Video asli dari petani akan tampil di sini.</div>
+      </div>
+      <div class="card"><b>VIDEO UNBOXING BUYER YANG UDAH LIVE</b>
+        <div id="gridVideo" class="empty">Belum ada video buyer yang LIVE. Video pertama akan tampil di sini setelah
+          Admin setujui.</div>
+      </div>
+    </div>
+
+    <!-- TESTIMONI -->
+    <div id="testi" class="section">
+      <section id="testimoni" style="font-family:sans-serif;max-width:800px;margin:0 auto;padding:10px;">
+        <h2 style="text-align:center;font-size:28px;line-height:1.2;">KEJUJURAN TAK KENAL DISKON,<br>APALAGI CUCI TANGAN
+          / ALIBI</h2>
+        <p style="text-align:center;color:#555;">Belum ada testimoni yang kami rekayasa. Kalo lu buyer pertama kami,
+          cerita lu yang akan jadi testimoni pertama di sini.</p>
+        <div style="background:#111;color:#fff;border-radius:16px;padding:20px;text-align:center;margin:20px 0;">
+          <div style="font-size:13px;letter-spacing:1px;opacity:.7;">REKAP JUJUR HARI INI - LIVE</div>
+          <div style="font-size:36px;font-weight:900;margin:10px 0;"><span id="totalSuara">0</span> SUARA</div>
+          <div style="display:flex;gap:10px;">
+            <div style="flex:1;background:#22c55e;padding:12px;border-radius:12px;">
+              <div>PUAS</div>
+              <div style="font-size:24px;font-weight:900;"><span id="totalPuas">0</span> (<span
+                  id="persenPuas">0</span>%)</div>
+            </div>
+            <div style="flex:1;background:#ef4444;padding:12px;border-radius:12px;">
+              <div>KECEWA</div>
+              <div style="font-size:24px;font-weight:900;"><span id="totalKecewa">0</span> (<span
+                  id="persenKecewa">0</span>%)</div>
+            </div>
+          </div>
+          <div style="font-size:12px;margin-top:10px;opacity:.7;">Terakhir update: <span id="lastUpdate">-</span> | Gak
+            ada yang kami hapus. Yang kecewa tetap kami tampilin.</div>
+        </div>
+        <div style="background:#f8f8f8;border:2px dashed #111;border-radius:16px;padding:20px;">
+          <h3 style="text-align:center;margin:0 0 15px;">LU BUYER BODO BOX? CERITAIN JUJUR!</h3><input id="namaBuyer"
+            class="input" placeholder="Nama lu - Kota (cth: Andi - Depok)"><input id="produkBuyer" class="input"
+            placeholder="Lu beli apa?"><textarea id="ceritaBuyer" rows="3" class="input"
+            placeholder="Ceritain jujur, kenapa lu PUAS / KECEWA? Wajib isi."></textarea>
+          <div style="display:flex;gap:10px;"><button onclick="kirimTestimoni('PUAS')"
+              style="flex:1;background:#22c55e;color:#fff;border:none;padding:16px;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer;">😍
+              PUAS</button><button onclick="kirimTestimoni('KECEWA')"
+              style="flex:1;background:#ef4444;color:#fff;border:none;padding:16px;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer;">😤
+              KECEWA</button></div>
+          <p style="font-size:12px;text-align:center;color:#777;">Klik sekali aja. Suara lu langsung keitung & langsung
+            tampil di bawah. Gak bisa dihapus admin.</p>
+        </div>
+        <div style="display:flex;gap:8px;margin:20px 0;overflow-x:auto;"><button onclick="filterTesti('SEMUA')"
+            style="padding:8px 14px;border-radius:20px;border:1px solid #111;background:#111;color:#fff;cursor:pointer;">Semua</button><button
+            onclick="filterTesti('PUAS')"
+            style="padding:8px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;cursor:pointer;">Puas
+            Saja</button><button onclick="filterTesti('KECEWA')"
+            style="padding:8px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;cursor:pointer;">Kecewa
+            Saja</button></div>
+        <div id="listTestimoni"></div>
+        <div style="margin-top:40px;border-top:3px solid #111;padding-top:20px;">
+          <h3>LAPORAN KEJUJURAN TAHUNAN - KAYAK LAPKEU</h3>
+          <p style="color:#555;">Tiap akhir tahun kita terbitin rekap setahun penuh. Puas berapa, Kecewa berapa, 10
+            Kecewa terbesar, apa yang udah kita benerin, dan Lapkeu versi rumus: Harga - Operasional - Modal = Laba
+            Bersih. Laba Bersih - 10% Buat Tanam - 10% CSR.</p>
+          <div style="background:#fff7ed;border:1px solid #fed7aa;padding:16px;border-radius:12px;"><b>LAPORAN 2026 -
+              BELUM TERBIT</b><br><span style="font-size:13px;">Akan terbit 31 Desember 2026. Isinya: Total Suara
+              Setahun, Total Box Terjual, Total Laba Bersih, Total 10% Buat Tanam + Total 10% CSR, dan Pernyataan
+              Founder: "Kalo gua ketahuan bohong, gua mundur dan bodo-box.com gua tutup."</span></div>
+          <div id="rekapTahunan" style="margin-top:12px;font-size:14px;"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- MITRA -->
+    <div id="mitra" class="section">
+      <h3>7. Mitra Box</h3><span class="viewer">👁️ Dilihat: <b id="view-mitra">0</b> kali</span>
+      <div class="card"><b style="font-size:13px;">🗺️ PETA LAHAN MITRA</b>
+        <p style="font-size:11px;color:#666;">Titik Maps sampe level kampung aja, bukan titik persis lahan demi
+          keamanan.</p><iframe src="https://www.google.com/maps?q=Ciampea,+Bogor,+Jawa+Barat&output=embed" width="100%"
+          height="220" style="border:0;border-radius:10px;" loading="lazy"></iframe>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;text-align:center;"><a
+            href="https://www.google.com/maps/search/Ciampea+Bogor" target="_blank"
+            style="background:#2D5A3A;color:#fff;padding:8px;border-radius:8px;text-decoration:none;font-size:11px;">📍
+            Ciampea</a><a href="https://www.google.com/maps/search/Cijeruk+Bogor" target="_blank"
+            style="background:#1565C0;color:#fff;padding:8px;border-radius:8px;text-decoration:none;font-size:11px;">📍
+            Cijeruk</a><a href="https://www.google.com/maps/search/Dramaga+Bogor" target="_blank"
+            style="background:#8B3A2F;color:#fff;padding:8px;border-radius:8px;text-decoration:none;font-size:11px;">📍
+            Dramaga</a></div>
+      </div>
+      <div class="card" style="background:#2B2117;color:#EADFCB;"><b style="font-size:13px;">📢 PASANG IKLAN DI
+          MITRA</b>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;"><button class="ad-btn"
+            onclick="pilihIklanMitra('MITRA - Banner Size 1','Rp 200.000 / 7 hari')">Size 1<br><small>Rp
+              200rb</small></button><button class="ad-btn"
+            onclick="pilihIklanMitra('MITRA - Banner Size 2','Rp 150.000 / 7 hari')">Size 2<br><small>Rp
+              150rb</small></button><button class="ad-btn"
+            onclick="pilihIklanMitra('MITRA - Banner Size 3','Rp 75.000 / 7 hari')">Size 3<br><small>Rp
+              75rb</small></button></div>
+      </div>
+      <div id="formIklanMitra" style="display:none;" class="card"><b id="judulPilihanMitra"
+          style="font-size:13px;">Mitra Banner Size 1</b><br><small id="hargaPilihanMitra"
+          style="color:#8B3A2F;font-weight:700;">Rp 200.000 / 7 hari</small><input id="ikNamaMitra" class="input"
+          placeholder="Nama Usaha *"><input id="ikWAMitra" class="input" placeholder="No WA *"><button class="btnp"
+          onclick="kirimIklanMitra()">KIRIM PENGAJUAN KE ADMIN →</button>
+        <p id="statusIklanMitra" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+      <div class="ad-box"><b>SLOT IKLAN MITRA - 1100x200</b><br>Belum ada iklan.</div>
+      <div id="gridMitra" class="grid"></div>
+      <div id="listMitraDetail" class="empty">Belum ada Mitra.<br><small>Mitra pertama akan tampil di sini setelah Admin
+          setujui pendaftaran.</small></div>
+      <div class="card" style="border:2px solid #2D5A3A;margin-top:10px;"><b style="font-size:13px;">📝 DAFTAR JADI
+          MITRA - PUNYA LAHAN / BISA BERTANI?</b>
+        <p style="font-size:11px;color:#666;">Punya lahan nganggur? Bisa bertani? Daftar di sini, kita hubungi via WA.
+        </p><input id="mitNama" class="input" placeholder="Nama Lengkap *"><input id="mitWA" class="input"
+          placeholder="No WA *"><input id="mitLahan" class="input" placeholder="Lokasi Lahan / Luas Lahan"><textarea
+          id="mitCerita" class="input" placeholder="Cerita lahan / pengalaman bertani..."></textarea><button
+          class="btnp" style="background:#2D5A3A;" onclick="kirimMitra()">KIRIM PENDAFTARAN MITRA →</button>
+        <p id="statusMitra" style="font-size:11px;text-align:center;margin-top:8px;"></p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="margin-top:20px;">
+      <div class="foot-grid">
+        <div class="foot-box"><b>BODO-BOX.COM</b>
+          <p style="font-size:11px;line-height:1.6;">Honesty - Transparency - Integrity<br>WA: 081285767528<br>Bogor,
+            Jawa Barat</p>
+        </div>
+        <div class="foot-box"><b>BANTUAN</b>
+          <p style="font-size:11px;line-height:1.8;"><a href="#" onclick="go('katalog');return false;">Katalog</a><br><a
+              href="#" onclick="go('trans');return false;">Transparency</a><br><a href="#"
+              onclick="go('testi');return false;">Testimoni</a><br><a href="#" onclick="go('realtime');return false;">Realtime</a><br><a href="#" onclick="go('video');return false;">Video</a><br><a href="#" onclick="go('mitra');return false;">Mitra</a></p>
+        </div>
+        <div class="foot-box"><b>PEMBAYARAN</b>
+          <p style="font-size:11px;line-height:1.6;"><span
+              style="display:inline-block;background:#F5EFE6;border:1px solid #D9C5A5;padding:4px 8px;border-radius:20px;font-size:10px;margin:2px;">BCA</span><span
+              style="display:inline-block;background:#F5EFE6;border:1px solid #D9C5A5;padding:4px 8px;border-radius:20px;font-size:10px;margin:2px;">QRIS</span><span
+              style="display:inline-block;background:#F5EFE6;border:1px solid #D9C5A5;padding:4px 8px;border-radius:20px;font-size:10px;margin:2px;">DANA
+              / OVO / GoPay</span><span
+              style="display:inline-block;background:#F5EFE6;border:1px solid #D9C5A5;padding:4px 8px;border-radius:20px;font-size:10px;margin:2px;">COD
+              Bogor</span></p>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:11px;color:#888;margin:12px 0;">© 2026 Bodo-Box.com - Honesty Transparency
+        Integrity</p>
+    </div>
+
+  </div>
+  <a class="wa-float" href="https://wa.me/6281285767528?text=Halo Bodo-Box" target="_blank">💬</a>
+
+  <script>
+    function go(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      var el = document.getElementById(id);
+      if (el) el.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ===== PRODUK - BERSIH, DARI DASHBOARD (localStorage) - GAK ADA TEMPLATE LAGI =====
+    function getProduk() { try { return JSON.parse(localStorage.getItem('bodo_produk') || '[]'); } catch (e) { return []; } }
+    var produkList = getProduk();
+    var filterHargaAktif = 'semua';
+    function setFilterHarga(f, btn) { filterHargaAktif = f; document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); if (btn) btn.classList.add('active'); filterKatalog(); }
+    function kartuProduk(p) {
+      var img = p.img || p.foto || 'produk.jpeg';
+      var harga = parseInt(p.harga || 0);
+      var stok = p.stok != null ? p.stok : '-';
+      return '<div class="card" style="text-align:center;"><img src="' + img + '" style="width:100%;height:140px;object-fit:cover;border-radius:10px;" onerror="this.src=\'https://via.placeholder.com/400\'"><b style="display:block;margin-top:8px;">' + (p.nama || 'Produk') + '</b><small style="color:#888;">' + (p.desc || '') + '</small><br><b style="color:#8B3A2F;">Rp ' + harga.toLocaleString('id-ID') + '</b><br><small>Stok: ' + stok + ' pcs</small><br><a href="https://wa.me/6281285767528?text=' + encodeURIComponent('Halo, saya mau beli ' + (p.nama || '')) + '" target="_blank" style="display:inline-block;background:#2D5A3A;color:#fff;padding:8px 14px;border-radius:20px;text-decoration:none;font-size:11px;margin-top:8px;">Beli via WA →</a></div>';
+    }
+    function emptyProdukHTML() { return '<div class="empty" style="grid-column:1/-1;">Belum ada produk.<br><small>Produk asli akan muncul di sini setelah Admin upload dari Dashboard.</small></div>'; }
+    function renderProduk() {
+      produkList = getProduk();
+      var html = produkList.length ? produkList.map(kartuProduk).join('') : emptyProdukHTML();
+      var g = document.getElementById('gridProduk'); if (g) g.innerHTML = html;
+      var gb = document.getElementById('gridBeranda'); if (gb) gb.innerHTML = html;
+      var gk = document.getElementById('gridKatalog'); if (gk) gk.innerHTML = html;
+      var h = document.getElementById('hasilKatalog'); if (h) h.innerText = 'Menampilkan ' + produkList.length + ' produk';
+      var rt = document.getElementById('rtStokProduk');
+      if (rt) rt.innerHTML = produkList.length ? produkList.map(function (p) { return (p.nama || 'Produk') + ' - Sisa ' + (p.stok != null ? p.stok : '-') + ' pcs'; }).join('<br>') : 'Belum ada produk, jadi belum ada stok.';
+    }
+    function filterKatalog() {
+      produkList = getProduk();
+      var q = (document.getElementById('cariKatalog').value || '').toLowerCase();
+      var urut = document.getElementById('urutKatalog').value;
+      var list = produkList.filter(function (p) {
+        var okNama = (p.nama || '').toLowerCase().includes(q);
+        var h = parseInt(p.harga || 0); var okHarga = true;
+        if (filterHargaAktif === 'murah') okHarga = h < 100000;
+        if (filterHargaAktif === 'sedang') okHarga = h >= 100000 && h <= 300000;
+        if (filterHargaAktif === 'mahal') okHarga = h > 300000;
+        return okNama && okHarga;
+      });
+      if (urut === 'murah') list.sort(function (a, b) { return parseInt(a.harga || 0) - parseInt(b.harga || 0); });
+      if (urut === 'mahal') list.sort(function (a, b) { return parseInt(b.harga || 0) - parseInt(a.harga || 0); });
+      if (urut === 'nama') list.sort(function (a, b) { return (a.nama || '').localeCompare(b.nama || ''); });
+      document.getElementById('gridKatalog').innerHTML = list.length ? list.map(kartuProduk).join('') : '<div class="empty" style="grid-column:1/-1;">Produk tidak ditemukan / Belum ada produk.</div>';
+      document.getElementById('hasilKatalog').innerText = 'Menampilkan ' + list.length + ' produk';
+    }
+
+    // ===== KALKULATOR =====
+    function hitungBagiHasil() {
+      var modal = parseInt(document.getElementById('calcModal').value || 0);
+      var jual = parseInt(document.getElementById('calcJual').value || 0);
+      if (!modal || !jual) { document.getElementById('hasilBagiHasil').innerHTML = 'Isi modal & harga jual dulu untuk liat bagi hasil.'; return; }
+      var laba = jual - modal;
+      var tanam = Math.round(laba * 0.1);
+      var csr = Math.round(laba * 0.1);
+      var seller = Math.round(laba * 0.4);
+      var bodo = Math.round(laba * 0.4);
+      document.getElementById('hasilBagiHasil').innerHTML = 'Laba Bersih: <b>Rp ' + laba.toLocaleString('id-ID') + '</b><br>🌱 Dana Tanam 10%: Rp ' + tanam.toLocaleString('id-ID') + '<br>🧡 CSR 10%: Rp ' + csr.toLocaleString('id-ID') + '<br>👤 Seller 40%: Rp ' + seller.toLocaleString('id-ID') + '<br>📦 Bodo-Box 40%: Rp ' + bodo.toLocaleString('id-ID') + '<br><small>Rumus kunci: Laba Bersih - 10% Tanam - 10% CSR = Sisa dibagi Seller & Bodo-Box.</small>';
+    }
+
+    // ===== IKLAN =====
+    function pilihIklan(judul, harga) { document.getElementById('formIklan').style.display = 'block'; document.getElementById('judulPilihan').innerText = judul; document.getElementById('hargaPilihan').innerText = harga; document.getElementById('formIklan').scrollIntoView({ behavior: 'smooth' }); }
+    function kirimIklan() { if (!document.getElementById('ikNama').value || !document.getElementById('ikWA').value) { alert('Isi Nama Usaha & WA dulu bro!'); return; } document.getElementById('statusIklan').innerText = '✅ Pengajuan terkirim! Tunggu konfirmasi Admin via WA.'; }
+    function pilihIklanKatalog(judul, harga) { document.getElementById('formIklanKatalog').style.display = 'block'; document.getElementById('judulPilihanKatalog').innerText = judul; document.getElementById('hargaPilihanKatalog').innerText = harga; document.getElementById('formIklanKatalog').scrollIntoView({ behavior: 'smooth' }); }
+    function kirimIklanKatalog() { document.getElementById('statusIklanKatalog').innerText = '✅ Pengajuan Katalog terkirim!'; }
+    function pilihIklanSeller(judul, harga) { document.getElementById('formIklanSeller').style.display = 'block'; document.getElementById('judulPilihanSeller').innerText = judul; document.getElementById('hargaPilihanSeller').innerText = harga; }
+    function kirimIklanSeller() { document.getElementById('statusIklanSeller').innerText = '✅ Pengajuan Seller terkirim!'; }
+    function pilihIklanRT(judul, harga) { document.getElementById('formIklanRT').style.display = 'block'; document.getElementById('judulPilihanRT').innerText = judul; document.getElementById('hargaPilihanRT').innerText = harga; }
+    function kirimIklanRT() { document.getElementById('statusIklanRT').innerText = '✅ Pengajuan Real-time terkirim!'; }
+    function pilihIklanTrans(judul, harga) { document.getElementById('formIklanTrans').style.display = 'block'; document.getElementById('judulPilihanTrans').innerText = judul; document.getElementById('hargaPilihanTrans').innerText = harga; }
+    function kirimIklanTrans() { document.getElementById('statusIklanTrans').innerText = '✅ Pengajuan Transparency terkirim!'; }
+    function pilihIklanMitra(judul, harga) { document.getElementById('formIklanMitra').style.display = 'block'; document.getElementById('judulPilihanMitra').innerText = judul; document.getElementById('hargaPilihanMitra').innerText = harga; }
+    function kirimIklanMitra() { document.getElementById('statusIklanMitra').innerText = '✅ Pengajuan Mitra terkirim!'; }
+    function kirimSeller() { if (!document.getElementById('sNama').value || !document.getElementById('sWA').value) { alert('Isi Nama & WA dulu!'); return; } if (!document.getElementById('sSetuju').checked) { alert('Centang dulu persetujuan 4 syarat!'); return; } document.getElementById('statusSeller').innerText = '✅ Pendaftaran Seller terkirim! Kami hubungi via WA.'; }
+    function kirimMitra() { if (!document.getElementById('mitNama').value || !document.getElementById('mitWA').value) { alert('Isi Nama & WA dulu!'); return; } document.getElementById('statusMitra').innerText = '✅ Pendaftaran Mitra terkirim! Kami hubungi via WA.'; }
+
+    // ===== VIDEO - BERSIH, GAK ADA CONTOH PALSU =====
+    var jenisVideoPilihan = 'unboxing';
+    function pilihJenisVideo(jenis) {
+      jenisVideoPilihan = jenis;
+      document.getElementById('optUnboxing').style.background = jenis === 'unboxing' ? '#E8F5E9' : '#fff';
+      document.getElementById('optTanam').style.background = jenis === 'tanam' ? '#E8F5E9' : '#fff';
+    }
+    function kirimVideoBuyer() {
+      var nama = document.getElementById('vidNama').value;
+      var wa = document.getElementById('vidWA').value;
+      var order = document.getElementById('vidOrder').value;
+      if (!nama || !wa || !order) { alert('Isi Nama, WA & No Order dulu bro!'); return; }
+      var list = JSON.parse(localStorage.getItem('videoBuyerMasuk') || '[]');
+      list.push({ nama: nama, wa: wa, order: order, judul: document.getElementById('vidJudul').value, jenis: jenisVideoPilihan, waktu: new Date().toLocaleString('id-ID') });
+      localStorage.setItem('videoBuyerMasuk', JSON.stringify(list));
+      document.getElementById('statusVideo').innerText = 'Video ' + jenisVideoPilihan + ' terkirim ke CMS Admin! Tunggu notif WA ya.';
+      renderCMSVideo();
+    }
+    function renderCMSVideo() {
+      var masuk = JSON.parse(localStorage.getItem('videoBuyerMasuk') || '[]');
+      var el = document.getElementById('cmsVideoList');
+      if (!masuk.length) { el.innerHTML = '<div class="empty">Belum ada video buyer yang masuk.</div>'; return; }
+      el.innerHTML = masuk.map(function (v, i) {
+        return '<div style="border:1px solid #ddd;padding:10px;margin-bottom:8px;border-radius:10px;"><b>' + (v.judul || '(Tanpa Judul)') + '</b><br><small>' + v.nama + ' | No Order: ' + v.order + ' | Jenis: ' + v.jenis + '</small><br><br><button onclick="setujuVideo(' + i + ')" style="background:#2D5A3A;color:#fff;padding:8px;border:none;border-radius:8px;">SETUJU / LIVE</button> <button onclick="tolakVideo(' + i + ')" style="background:#C62828;color:#fff;padding:8px;border:none;border-radius:8px;">TOLAK</button> <button onclick="kirimNotifWA(' + i + ')" style="background:#25D366;color:#fff;padding:8px;border:none;border-radius:8px;">KIRIM NOTIF WA (Gratis)</button><div id="alasanTolak-' + i + '" style="display:none;margin-top:8px;"><select id="alasanSelect-' + i + '"><option>Video terlalu gelap, coba di tempat terang</option><option>Suara gak jelas, coba ngomong lebih deket HP</option><option>Bukan video unboxing / tanam, coba kirim ulang yang sesuai</option><option>Video terlalu goyang / blur, coba pegang HP lebih stabil</option></select><button onclick="kirimTolakWA(' + i + ')" style="background:#C62828;color:#fff;padding:8px;border:none;border-radius:8px;margin-top:6px;">Kirim Alasan Tolak via WA</button></div></div>';
+      }).join('');
+    }
+    function setujuVideo(i) { alert('Video ke-' + (i + 1) + ' DISETUJUI & LIVE! Klik Kirim Notif WA biar buyer tau.'); }
+    function tolakVideo(i) { document.getElementById('alasanTolak-' + i).style.display = 'block'; }
+    function kirimNotifWA(i) { var pesan = encodeURIComponent('Halo, video kamu udah LIVE di Bodo-Box! Makasih udah jujur. Liat di: bodo-box.com/video - Bodo-Box'); window.open('https://wa.me/6281285767528?text=' + pesan, '_blank'); }
+    function kirimTolakWA(i) { var alasan = document.getElementById('alasanSelect-' + i).value; var pesan = encodeURIComponent('Halo, maaf video kamu belum bisa tayang karena: ' + alasan + '. Coba kirim ulang ya! - Bodo-Box'); window.open('https://wa.me/6281285767528?text=' + pesan, '_blank'); }
+    function renderVideoLists() {
+      // Video Mitra & Buyer LIVE sekarang dari data asli aja, bukan contoh. Kalo belum ada, biarin empty di HTML.
+      document.getElementById('gridVideoMitra').innerHTML = '<div class="empty">Belum ada video Mitra. Video asli dari petani akan tampil di sini.</div>';
+      document.getElementById('gridVideo').innerHTML = '<div class="empty">Belum ada video buyer yang LIVE.</div>';
+    }
+
+    // ===== TESTIMONI =====
+    var dataTesti = JSON.parse(localStorage.getItem('bodo_testimoni') || '[]');
+    var filterAktif = 'SEMUA';
+    function kirimTestimoni(status) {
+      var nama = document.getElementById('namaBuyer').value.trim();
+      var produk = document.getElementById('produkBuyer').value.trim();
+      var cerita = document.getElementById('ceritaBuyer').value.trim();
+      if (!nama || !produk || !cerita) { alert('Bro, isi semua dulu. Nama, produk, sama cerita jujurnya wajib.'); return; }
+      var item = { nama: nama, produk: produk, cerita: cerita, status: status, waktu: new Date().toLocaleString('id-ID') };
+      dataTesti.unshift(item);
+      localStorage.setItem('bodo_testimoni', JSON.stringify(dataTesti));
+      document.getElementById('namaBuyer').value = ''; document.getElementById('produkBuyer').value = ''; document.getElementById('ceritaBuyer').value = '';
+      renderTesti();
+    }
+    function filterTesti(f) { filterAktif = f; renderTesti(); }
+    function renderTesti() {
+      var total = dataTesti.length;
+      var puas = dataTesti.filter(function (x) { return x.status === 'PUAS'; }).length;
+      var kecewa = total - puas;
+      document.getElementById('totalSuara').innerText = total;
+      document.getElementById('totalPuas').innerText = puas;
+      document.getElementById('totalKecewa').innerText = kecewa;
+      document.getElementById('persenPuas').innerText = total ? Math.round(puas / total * 100) : 0;
+      document.getElementById('persenKecewa').innerText = total ? Math.round(kecewa / total * 100) : 0;
+      document.getElementById('lastUpdate').innerText = total ? dataTesti[0].waktu : '-';
+      var list = dataTesti.filter(function (x) { return filterAktif === 'SEMUA' || x.status === filterAktif; });
+      document.getElementById('listTestimoni').innerHTML = list.length ? list.map(function (x) { return '<div style="border:1px solid #eee;border-radius:14px;padding:16px;margin-bottom:12px;border-left:6px solid ' + (x.status === 'PUAS' ? '#22c55e' : '#ef4444') + '"><div style="display:flex;justify-content:space-between;font-size:12px;color:#888;"><b style="color:#111;font-size:14px;">' + x.nama + ' - ' + x.status + '</b><span>' + x.waktu + '</span></div><div style="font-size:13px;color:#555;margin:4px 0;">Beli: ' + x.produk + '</div><div style="font-size:15px;line-height:1.5;">"' + x.cerita + '"</div></div>'; }).join('') : '<div style="text-align:center;padding:30px;background:#f9f9f9;border-radius:14px;">BELUM ADA TESTIMONI YANG KAMI REKAYASA.<br><span style="font-size:13px;color:#777;">Kalo lu buyer pertama kami, cerita lu yang akan jadi testimoni pertama di sini.</span></div>';
+      var tahunIni = new Date().getFullYear();
+      document.getElementById('rekapTahunan').innerHTML = 'Rekap ' + tahunIni + ' (Otomatis dari tombol di atas): Total <b>' + total + '</b> suara | Puas <b>' + puas + '</b> | Kecewa <b>' + kecewa + '</b>. Ini yang akan masuk ke Laporan Kejujuran Tahunan.';
+    }
+
+    // ===== INIT =====
+    renderProduk();
+    hitungBagiHasil();
+    renderCMSVideo();
+    renderVideoLists();
+    renderTesti();
+  </script>
+  <script>
+fetch('https://admin.bodo-box.com/api/products')
+  .then(res => res.json())
+  .then(data => {
+    let html = '';
+    data.forEach(p => {
+      html += `
+        <div style="border:1px solid #ddd; padding:10px; margin:10px; border-radius:10px;">
+          <img src="https://admin.bodo-box.com/storage/${p.foto}" style="width:100%; border-radius:10px;">
+          <h3>${p.nama}</h3>
+          <p>${p.deskripsi || ''}</p>
+          <b>Rp ${Number(p.harga).toLocaleString('id-ID')}</b>
+          <br><br>
+          <a href="https://wa.me/6281234567890?text=Halo, mau pesan ${p.nama}" style="background:green; color:white; padding:8px 12px; border-radius:8px; text-decoration:none;">Pesan WA</a>
+        </div>
+      `;
+    });
+    document.getElementById('gridProduk').innerHTML = html;
+  })
+  .catch(err => {
+   document.getElementById('gridProduk').innerHTML = 'Gagal ambil produk: ' + err;
+  });
+</script>
+</body>
+
+</html>

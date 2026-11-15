@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STAR CODE - Bodo-Box</title>
+<link rel="icon" href="favicon-180.png">
+<style>
+/* HEADER MEPET - FIX DARI KEMARIN */
+.header{position:sticky;top:0;z-index:100;background:#E8EEDC;padding:6px 10px;border-bottom:1px solid #D6E0C8}
+.nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:8px}
+.logo-img{width:40px;height:40px;border-radius:8px}
+.brand{font-weight:900;letter-spacing:.5px}
+.tag{font-size:10px;opacity:.7}
+.header-nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin-left:auto}
+.mbtn{border:1px solid #2A5A40;background:white;color:#1E3A2F;padding:5px 9px;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer}
+.mbtn:hover{background:#1E3A2F;color:white}
+
+/* STAR CODE */
+#star-code{font-family:Arial,sans-serif;background:#0B0B0F;color:white;padding:24px 12px;text-align:center;min-height:80vh}
+.sc-card{background:#1E3A2F;padding:16px;border-radius:16px;max-width:600px;margin:16px auto}
+.sc-dark{background:#000} .sc-light{background:#E8EEDC;color:#1E3A2F}
+.sc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.sc-paket{background:white;color:black;padding:12px;border-radius:12px;cursor:pointer;font-size:13px}
+.sc-paket.gold{background:#FFD700}
+.sc-btn{background:#FFD700;border:none;padding:12px 20px;border-radius:10px;font-weight:800;width:100%;cursor:pointer;color:#000}
+.sc-btn-dark{background:#1E3A2F;color:white;border:none;padding:12px 20px;border-radius:10px;font-weight:800;width:100%;cursor:pointer}
+.sc-manifesto{text-align:left;background:#FFF8DC;color:#1E3A2F;padding:18px;border-radius:12px;margin-top:14px;font-size:14px}
+.sc-paket{background:white;color:black;padding:12px;border-radius:12px;cursor:pointer;transition:0.2s}
+.sc-paket.gold, .sc-paket.active{background:#FFD700 !important;color:black !important;border:2px solid #FFD700;transform:scale(1.02)}
+</style>
+</head>
+<body style="margin:0;background:#F5F5F0">
+
+<!-- HEADER MEPET FINAL -->
+<header class="header">
+  <div class="nav">
+    <div class="logo">
+      <img class="logo-img" src="favicon-180.png" alt="Bodo-Box">
+      <div>
+        <div class="brand">BODO-BOX.COM</div>
+        <div class="tag">Honesty Transparency Integrity</div>
+      </div>
+    </div>
+    <div class="header-nav">
+      <button class="mbtn" onclick="window.location.href='index.html#beranda'">Beranda</button>
+      <button class="mbtn" onclick="window.location.href='index.html#katalog'">Katalog</button>
+      <button class="mbtn" onclick="window.location.href='index.html#seller'">Seller</button>
+      <button class="mbtn" style="background:#FFD700;border-color:#FFD700" onclick="window.location.href='star-code.html'">STAR CODE</button>
+    </div>
+  </div>
+</header>
+
+<!-- STAR CODE LU -->
+<section id="star-code">
+  <h2 style="font-size:32px;margin:0;">⭐ STAR CODE</h2>
+  <p style="opacity:.8">Kamu bukan bulan. Kamu bintang.</p>
+
+  <div id="sc-step1" class="sc-card">
+    <h3>1. LOGIN</h3>
+    <p>Login dulu bro biar bintangmu ke-save</p>
+    <button onclick="scNext(2)" class="sc-btn">LOGIN WA / GOOGLE</button>
+  </div>
+
+  <div id="sc-step2" class="sc-card" style="display:none">
+    <h3>2. PILIH PAKET</h3>
+    <div class="sc-grid">
+     <div onclick="pilihPaket(this,'Bintang Kecil',1)" class="sc-paket">⭐ Kecil<br>1 Pohon<br><b>Rp 25rb</b></div>
+<div onclick="pilihPaket(this,'Bintang Terang',5)" class="sc-paket active gold">🌟 Terang<br>5 Pohon<br><b>Rp 100rb</b></div>
+<div onclick="pilihPaket(this,'Bintang Besar',10)" class="sc-paket">💫 Besar<br>10 Pohon<br><b>Rp 180rb</b></div>
+    </div>
+    <p id="sc-paket-dipilih" style="margin-top:12px;">Belum pilih paket</p>
+    <button onclick="scNext(3)" class="sc-btn">BAYAR SEKARANG</button>
+  </div>
+
+  <div id="sc-step3" class="sc-card sc-dark" style="display:none">
+    <h3>3. HALAMAN GELAP</h3>
+    <p style="opacity:.7">Layar gelap... tapi bintangmu mau nyala.</p>
+    <button id="sc-nyalakan" onclick="nyalakanBintang()" class="sc-btn" style="border-radius:30px">✨ NYALAKAN BINTANGMU</button>
+    <div id="sc-manifesto" style="display:none" class="sc-manifesto">
+      <p><b>Aku bukanlah bulan yg bergantung cahaya pada matahari, aku adalah bintang yg cahayanya dianggap redup n samar2, tpi cahayaku tak pernah bergantung pada apapun. Aku lahir dan tumbuh melalui proses yg panjang n berliku.. itulah aku, bintang. Kpnpun dmnpun aku tidak akan pernah redup, aku menyala sepanjang masa-zaman meski di tengah kegelapan sklipun - bodo-box.com</b></p>
+      <hr>
+      <p><i>I am not the moon that depends on the sun's light... - bodo-box.com</i></p>
+      <h4>4 KODE BINTANG:</h4>
+      <p>1. HONESTY<br>2. TRANSPARENCY<br>3. INTEGRITY<br>4. SHINE</p>
+      <button onclick="scNext(4)" class="sc-btn-dark">LANJUT KE CERITA →</button>
+    </div>
+  </div>
+
+  <div id="sc-step4" class="sc-card" style="display:none">
+    <h3>4. CERITA - 30 DETIK</h3>
+    <p>Ceritain kenapa lu nanem</p>
+    <input type="file" accept="video/*" style="background:white;padding:10px;border-radius:10px;width:100%">
+    <button onclick="scNext(5)" class="sc-btn" style="margin-top:10px">KIRIM CERITA</button>
+  </div>
+
+  <div id="sc-step5" class="sc-card sc-light" style="display:none">
+    <h3>🌌 GALAKSI BINTANG</h3>
+    <p><b>Total Pohon: <span id="sc-pohon">1</span></b> | <b>Poin: 100</b></p>
+    <p style="font-size:13px;">Level: Kecil 0-5 | Terang 6-20 | Besar 21-50 | Supernova 51+</p>
+    <p style="background:white;padding:10px;border-radius:10px;">🎉 +100 Poin! Cek WA lu bro!</p>
+    <button onclick="scNext(1)" class="sc-btn-dark">ULANG DARI AWAL</button>
+  </div>
+</section>
+
+<script>
+function scNext(n){
+  for(let i=1;i<=5;i++){let el=document.getElementById('sc-step'+i); if(el) el.style.display='none';}
+  document.getElementById('sc-step'+n).style.display='block';
+}
+function pilihPaket(el,nama,jml){
+  // hapus kuning dari semua paket
+  document.querySelectorAll('.sc-paket').forEach(p=>{
+    p.classList.remove('gold');
+    p.classList.remove('active');
+  });
+  // kasih kuning ke yang di klik
+  el.classList.add('active');
+  el.classList.add('gold');
+
+  document.getElementById('sc-paket-dipilih').innerText='Lu pilih: '+nama+' ✅';
+  document.getElementById('sc-pohon').innerText=jml;
+}
+function nyalakanBintang(){
+  document.getElementById('sc-manifesto').style.display='block';
+  document.getElementById('sc-nyalakan').innerText='✨ BINTANGMU UDAH NYALA!';
+}
+</script>
+</body>
+</html>
